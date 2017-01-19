@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  quake3:
+    image: jberrenberg/quake3
+    volumes:
+      - ./data/pak0.pk3:/pak0.pk3
+      - ./data/server.cfg:/home/ioq3srv/.q3a/baseq3/server.cfg
+    ports:
+      - 27960:27960/udp
+    command: +exec server.cfg
+
